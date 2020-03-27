@@ -1,0 +1,89 @@
+$menu-size: 40px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: cornflowerblue;
+}
+
+.menu-btn, .btn {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2B2D42;
+  border-radius: 50%;
+  height: $menu-size;
+  width: $menu-size;
+}
+
+.menu-btn.closed{
+  .bar-1 {
+    transform: none;
+    transition: transform 0.5s ease;
+    transition-delay: 0.8s;
+  }
+  .bar-2 {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    transition-delay: 1s;
+  }
+  .bar-3 {
+    transform: none;
+    transition: transform 0.5s ease;
+    transition-delay: 0.8s;
+  }
+}
+
+.menu-btn {
+  .bar-1 {
+    transform: rotate(45deg) translateY($menu-size/7.1);
+    transition: transform 1s ease;
+    transition-delay: 0.2s;
+  }
+  .bar-2 {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    transition-delay: 0.2s;
+  }
+  .bar-3 {
+    transform: rotate(-45deg) translateY(-$menu-size/7.1);
+    transition: transform 1s ease;
+    transition-delay: 0.2s;
+  }
+}
+
+.bar {
+  display: block;
+  margin: $menu-size/40;
+  height: $menu-size/20;
+  width: $menu-size/2.66666;
+  background-color: #EDF2F4;
+}
+
+.icon {
+  height: $menu-size/2;
+  color: #EDF2F4;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #2B2D42;
+  border-radius: $menu-size;
+  transition: width 1s ease, border-radius 0.3s ease;
+}
+
+.menu.closed {
+  width: $menu-size;
+  overflow: hidden;
+  transition: width 1s ease, border-radius 1.5s ease;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
